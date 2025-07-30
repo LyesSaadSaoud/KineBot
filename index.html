@@ -2,91 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KineBot: Bio-Inspired Kinetic Robotics</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; color: #222; }
-        header, footer { background: #00557f; color: #fff; padding: 1em 2em; }
-        main { padding: 2em; max-width: 960px; margin: auto; background: #fff; }
-        h1, h2, h3 { color: #00557f; }
-        section { margin-bottom: 2em; }
-        .authors { font-style: italic; margin-bottom: 1em; }
-        img { max-width: 100%; height: auto; }
-        .media { display: flex; gap: 20px; flex-wrap: wrap; }
-        .media img, .media video { flex: 1 1 45%; border: 1px solid #ccc; padding: 5px; }
-        .download-btn { display: inline-block; padding: 0.5em 1em; background: #00557f; color: white; text-decoration: none; margin-top: 1em; }
-        .download-btn:hover { background: #003c5f; }
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #fdfdfd; color: #333; }
+        h1, h2 { color: #005580; }
+        a { color: #0077cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .section { margin-bottom: 40px; }
+        .authors { font-size: 0.95em; color: #444; margin-top: -10px; }
+        .pdf-link { margin-top: 10px; display: inline-block; font-size: 1.1em; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>KineBot</h1>
-    <p>Bio-Inspired Kinetic Robotics for Artistic, Educational, and Ecological Engagement</p>
-</header>
+    <h1>KineBot: Bio-Inspired Kinetic Robotics for Artistic, Educational, and Ecological Engagement</h1>
+    <div class="authors">
+        Lyes Saad Saoud, Loïc Lesobre, Enrico Sorato, Saud Al Qaydi, Yves Hingrat, Lakmal Seneviratne, Irfan Hussain
+    </div>
 
-<main>
-    <section>
+    <div class="pdf-link">
+        <a href="RAM_Paper.pdf" target="_blank">📄 Download PDF</a>
+    </div>
+
+    <div class="section">
         <h2>Overview</h2>
-        <p><strong>KineBot</strong> is a lifelike robotic platform inspired by the Houbara bustard. It serves as a dynamic interface between ecology, kinetic art, and interactive public engagement. This system combines anatomical fidelity, modular design, and real-time embedded intelligence to enable expressive motion, environmental interaction, and multi-context deployment.</p>
-    </section>
+        <p>
+            <strong>KineBot</strong> is a bio-inspired kinetic robotic platform that merges robotic design, ethology, and kinetic sculpture. Developed as a lifelike replica of the Houbara bustard, the platform is designed to support species-specific interaction studies, educational exhibitions, and public engagement through expressive robotic motion.
+        </p>
+    </div>
 
-    <section>
-        <h2>Authors</h2>
-        <p class="authors">Lyes Saad Saoud, Loïc Lesobre, Enrico Sorato, Saud Al Qaydi, Yves Hingrat, Lakmal Seneviratne, Irfan Hussain</p>
-    </section>
-
-    <section>
-        <h2>Key Features</h2>
+    <div class="section">
+        <h2>Core Contributions</h2>
         <ul>
-            <li>Digitally replicable pipeline using structured-light 3D scanning and CAD modeling</li>
-            <li>Photorealistic UV-textured vinyl wrapping with matte-finished surface</li>
-            <li>Six-wheeled rocker-bogie locomotion for outdoor terrain</li>
-            <li>Jetson-based visual tracking and object detection (YOLOv11n fine-tuned on custom dataset)</li>
-            <li>Onboard GUI and modular actuation for semi-automated motion control</li>
+            <li>Digitally replicable biomimicry pipeline from 3D scanning to articulated printing</li>
+            <li>Surface realism via photogrammetric vinyl wrapping for visual fidelity</li>
+            <li>Rocker-bogie mobility system enabling rough-terrain navigation</li>
+            <li>Thermal + RGB sensing with Jetson-based inference for real-time detection</li>
+            <li>Validated use in controlled ecological trials and kinetic art installations</li>
         </ul>
-    </section>
+    </div>
 
-    <section>
-        <h2>Applications</h2>
-        <p>KineBot bridges scientific communication and kinetic sculpture. It is designed for:</p>
+    <div class="section">
+        <h2>Authors and Affiliations</h2>
+        <p>
+            The work is a collaboration between Khalifa University (UAE), CNRS (France), and IFHC. The research team combines expertise in robotics, ethology, and interactive systems to develop expressive and behaviorally relevant robotic platforms.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Links</h2>
         <ul>
-            <li>Ethological testing in semi-natural environments</li>
-            <li>Bio-inspired public installations and exhibitions</li>
-            <li>Educational demonstrations in conservation technology</li>
+            <li><a href="https://lyessaadsaoud.github.io" target="_blank">Author Website</a></li>
+            <li><a href="https://github.com/lyessaadsaoud" target="_blank">GitHub Repository (Coming Soon)</a></li>
+            <li><a href="RAM_Paper.pdf" target="_blank">Full RAM Paper PDF</a></li>
         </ul>
-    </section>
-
-    <section>
-        <h2>Media</h2>
-        <div class="media">
-            <img src="images/houbara_robot_1.jpg" alt="KineBot with vinyl wrap">
-            <video src="media/kinebot_demo.mp4" controls></video>
-        </div>
-    </section>
-
-    <section>
-        <h2>Paper</h2>
-        <p>This project is described in the RAM paper:</p>
-        <p><strong>“Bio-Inspired Kinetic Robotics for Artistic, Educational, and Ecological Engagement”</strong></p>
-        <a href="RAM_Paper.pdf" class="download-btn" target="_blank">Download PDF</a>
-    </section>
-
-    <section>
-        <h2>Code & Resources</h2>
-        <p>GitHub repository (to be released soon)</p>
-        <ul>
-            <li>CAD files for modular segments</li>
-            <li>YOLOv11n training config and weights</li>
-            <li>GUI control software (PyQt/PySide6)</li>
-        </ul>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2025 Khalifa University Center for Autonomous Robotic Systems. All rights reserved.</p>
-</footer>
+    </div>
 
 </body>
 </html>
