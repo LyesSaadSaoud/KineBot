@@ -2,60 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KineBot: Bio-Inspired Kinetic Robotics</title>
+    <title>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background-color: #fdfdfd; color: #333; }
-        h1, h2 { color: #005580; }
-        a { color: #0077cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .section { margin-bottom: 40px; }
-        .authors { font-size: 0.95em; color: #444; margin-top: -10px; }
-        .pdf-link { margin-top: 10px; display: inline-block; font-size: 1.1em; }
+        body { 
+            font-family: 'Helvetica Neue', sans-serif; 
+            margin: 40px; 
+            background-color: #fdfdfd; 
+            color: #2c2c2c; 
+            line-height: 1.6;
+        }
+        h1 { color: #005691; margin-bottom: 5px; }
+        h2 { color: #0072aa; margin-top: 40px; }
+        .authors { font-size: 0.95em; color: #444; margin-top: -10px; margin-bottom: 20px; }
+        .affiliations { font-size: 0.9em; color: #666; margin-bottom: 20px; }
+        .pdf-link { margin-top: 10px; display: inline-block; font-size: 1.05em; color: #005691; text-decoration: none; }
+        .pdf-link:hover { text-decoration: underline; }
+        ul { margin-top: 0; }
+        .section { margin-bottom: 50px; }
     </style>
 </head>
 <body>
 
-    <h1>KineBot: Bio-Inspired Kinetic Robotics for Artistic, Educational, and Ecological Engagement</h1>
+    <h1>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</h1>
+    
     <div class="authors">
-        Lyes Saad Saoud, Loïc Lesobre, Enrico Sorato, Saud Al Qaydi, Yves Hingrat, Lakmal Seneviratne, Irfan Hussain
+        Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain<sup>*</sup>
+    </div>
+    
+    <div class="affiliations">
+        <p>
+        <strong>1.</strong> Khalifa University Center for Autonomous Robotic Systems (KUCARS), United Arab Emirates<br>
+        <strong>2.</strong> RENECO International Wildlife Consultants LLC, Abu Dhabi, United Arab Emirates<br>
+        <sup>*</sup>Corresponding author: irfan.hussain@ku.ac.ae
+        </p>
     </div>
 
-    <div class="pdf-link">
-        <a href="RAM_Paper.pdf" target="_blank">📄 Download PDF</a>
-    </div>
+    <a class="pdf-link" href="RAM_Paper.pdf" target="_blank">📄 Download Full RAM Paper (PDF)</a>
 
     <div class="section">
-        <h2>Overview</h2>
+        <h2>Abstract</h2>
         <p>
-            <strong>KineBot</strong> is a bio-inspired kinetic robotic platform that merges robotic design, ethology, and kinetic sculpture. Developed as a lifelike replica of the Houbara bustard, the platform is designed to support species-specific interaction studies, educational exhibitions, and public engagement through expressive robotic motion.
+        This paper presents a novel bio-inspired kinetic robotic platform that bridges ecological research, kinetic art, and science communication. A modular design workflow is introduced for creating lifelike robotic surrogates, exemplified by a female Houbara bustard. The platform integrates 3D anatomical scanning, parametric CAD modeling, articulated 3D-printed shells, and surface realism through photogrammetric vinyl wraps. Multiple mobility configurations are supported, including rocker-bogie and Mecanum bases. The system embeds RGB and thermal sensing, Jetson-based inference, and a GUI for real-time tracking and synchronized servo control. It has been validated in both ecological trials and public-facing exhibitions, demonstrating its value across biology, engineering, and art.
         </p>
     </div>
 
     <div class="section">
         <h2>Core Contributions</h2>
         <ul>
-            <li>Digitally replicable biomimicry pipeline from 3D scanning to articulated printing</li>
-            <li>Surface realism via photogrammetric vinyl wrapping for visual fidelity</li>
-            <li>Rocker-bogie mobility system enabling rough-terrain navigation</li>
-            <li>Thermal + RGB sensing with Jetson-based inference for real-time detection</li>
-            <li>Validated use in controlled ecological trials and kinetic art installations</li>
+            <li><strong>Replicable design pipeline:</strong> Anatomical 3D scanning, CAD modeling, and articulated 3D printing of avian surrogates</li>
+            <li><strong>Surface realism:</strong> UV texture mapping and photogrammetric vinyl skin application for ecological and artistic fidelity</li>
+            <li><strong>Terrain-capable modular base:</strong> Rocker-bogie system with articulated neck for interactive robotic motion</li>
+            <li><strong>Jetson-based visual intelligence:</strong> Real-time RGB/thermal detection, servo tracking, and GUI-based inspection</li>
+            <li><strong>Ecological and artistic validation:</strong> Proven use in Houbara courtship studies and kinetic art installations</li>
         </ul>
-    </div>
-
-    <div class="section">
-        <h2>Authors and Affiliations</h2>
-        <p>
-            The work is a collaboration between Khalifa University (UAE), CNRS (France), and IFHC. The research team combines expertise in robotics, ethology, and interactive systems to develop expressive and behaviorally relevant robotic platforms.
-        </p>
     </div>
 
     <div class="section">
         <h2>Links</h2>
         <ul>
             <li><a href="https://lyessaadsaoud.github.io" target="_blank">Author Website</a></li>
-            <li><a href="https://github.com/lyessaadsaoud" target="_blank">GitHub Repository (Coming Soon)</a></li>
-            <li><a href="RAM_Paper.pdf" target="_blank">Full RAM Paper PDF</a></li>
+            <li><a href="https://github.com/lyessaadsaoud" target="_blank">Project Repository (Coming Soon)</a></li>
+            <li><a href="RAM_Paper.pdf" target="_blank">Download RAM Paper PDF</a></li>
         </ul>
     </div>
 
