@@ -1,71 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { 
-            font-family: 'Helvetica Neue', sans-serif; 
-            margin: 40px; 
-            background-color: #fdfdfd; 
-            color: #2c2c2c; 
-            line-height: 1.6;
-        }
-        h1 { color: #005691; margin-bottom: 5px; }
-        h2 { color: #0072aa; margin-top: 40px; }
-        .authors { font-size: 0.95em; color: #444; margin-top: -10px; margin-bottom: 20px; }
-        .affiliations { font-size: 0.9em; color: #666; margin-bottom: 20px; }
-        .pdf-link { margin-top: 10px; display: inline-block; font-size: 1.05em; color: #005691; text-decoration: none; }
-        .pdf-link:hover { text-decoration: underline; }
-        ul { margin-top: 0; }
-        .section { margin-bottom: 50px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fb;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #084B8A;
+      color: white;
+      text-align: center;
+      padding: 40px 20px 30px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .authors, .affiliations {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons a {
+      background-color: #2980b9;
+      color: white;
+      padding: 10px 18px;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      font-weight: bold;
+    }
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #084B8A;
+      margin-top: 0;
+    }
+    .videos {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .videos iframe {
+      flex: 1;
+      min-width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+    }
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .images img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</h1>
-    
-    <div class="authors">
-        Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain<sup>*</sup>
-    </div>
-    
-    <div class="affiliations">
-        <p>
-        <strong>1.</strong> Khalifa University Center for Autonomous Robotic Systems (KUCARS), United Arab Emirates<br>
-        <strong>2.</strong> RENECO International Wildlife Consultants LLC, Abu Dhabi, United Arab Emirates<br>
-        <sup>*</sup>Corresponding author: irfan.hussain@ku.ac.ae
-        </p>
-    </div>
+<header>
+  <h1>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</h1>
+  <div class="authors">
+    Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain
+  </div>
+  <div class="affiliations">
+    Khalifa University Center for Autonomous Robotic Systems (KUCARS), United Arab Emirates<br>
+    RENECO International Wildlife Consultants LLC, Abu Dhabi, United Arab Emirates
+  </div>
+  <div class="buttons">
+    <a href="RAM_Paper.pdf" target="_blank">📄 Paper</a>
+    <a href="https://github.com/lyessaadsaoud" target="_blank">💻 Code</a>
+    <a href="https://lyessaadsaoud.github.io" target="_blank">🌐 Other</a>
+  </div>
+</header>
 
-    <a class="pdf-link" href="RAM_Paper.pdf" target="_blank">📄 Download Full RAM Paper (PDF)</a>
+<div class="section">
+  <h2>Abstract</h2>
+  <p>
+    This paper presents a novel bio-inspired kinetic robotic platform that bridges ecological research, kinetic art, and science communication.
+    A modular design workflow is introduced for creating lifelike robotic surrogates, exemplified by a female Houbara bustard.
+    The platform integrates 3D anatomical scanning, parametric CAD modeling, articulated 3D-printed shells, and surface realism through photogrammetric vinyl wraps.
+    Multiple mobility configurations are supported, including rocker-bogie and Mecanum bases.
+    The system embeds RGB and thermal sensing, Jetson-based inference, and a GUI for real-time tracking and synchronized servo control.
+    It has been validated in both ecological trials and public-facing exhibitions, demonstrating its value across biology, engineering, and art.
+  </p>
+</div>
 
-    <div class="section">
-        <h2>Abstract</h2>
-        <p>
-        This paper presents a novel bio-inspired kinetic robotic platform that bridges ecological research, kinetic art, and science communication. A modular design workflow is introduced for creating lifelike robotic surrogates, exemplified by a female Houbara bustard. The platform integrates 3D anatomical scanning, parametric CAD modeling, articulated 3D-printed shells, and surface realism through photogrammetric vinyl wraps. Multiple mobility configurations are supported, including rocker-bogie and Mecanum bases. The system embeds RGB and thermal sensing, Jetson-based inference, and a GUI for real-time tracking and synchronized servo control. It has been validated in both ecological trials and public-facing exhibitions, demonstrating its value across biology, engineering, and art.
-        </p>
-    </div>
+<div class="section">
+  <h2>Demo Videos</h2>
+  <div class="videos">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+  </div>
+</div>
 
-    <div class="section">
-        <h2>Core Contributions</h2>
-        <ul>
-            <li><strong>Replicable design pipeline:</strong> Anatomical 3D scanning, CAD modeling, and articulated 3D printing of avian surrogates</li>
-            <li><strong>Surface realism:</strong> UV texture mapping and photogrammetric vinyl skin application for ecological and artistic fidelity</li>
-            <li><strong>Terrain-capable modular base:</strong> Rocker-bogie system with articulated neck for interactive robotic motion</li>
-            <li><strong>Jetson-based visual intelligence:</strong> Real-time RGB/thermal detection, servo tracking, and GUI-based inspection</li>
-            <li><strong>Ecological and artistic validation:</strong> Proven use in Houbara courtship studies and kinetic art installations</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Links</h2>
-        <ul>
-            <li><a href="https://lyessaadsaoud.github.io" target="_blank">Author Website</a></li>
-            <li><a href="https://github.com/lyessaadsaoud" target="_blank">Project Repository (Coming Soon)</a></li>
-            <li><a href="RAM_Paper.pdf" target="_blank">Download RAM Paper PDF</a></li>
-        </ul>
-    </div>
+<div class="section">
+  <h2>Gallery</h2>
+  <div class="images">
+    <img src="a728439d-e6b9-4484-a910-d0e8ad7d8066.png" alt="Robot Image 1">
+    <img src="1fe323cf-9e3b-48df-8502-7280bfad04b9.png" alt="Robot Image 2">
+    <img src="f499836f-33b9-4747-9588-d6ac66d3573e.png" alt="Robot Image 3">
+    <img src="e3f70b13-99a4-472f-a16f-7ec060aa449d.png" alt="Robot Image 4">
+  </div>
+</div>
 
 </body>
 </html>
