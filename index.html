@@ -1,79 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bio-Inspired Robotic Houbara: From Development to Field Deployment for Behavioral Studies</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --brand: #084B8A;
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --max-content: 980px;
+      --video-max: 720px;   /* cap for hero & single video width */
+      --radius: 12px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f9fb;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
       color: #1a1a1a;
       margin: 0;
-      padding: 0;
     }
+
     header {
-      background-color: #084B8A;
-      color: white;
+      background: var(--brand);
+      color: #fff;
       text-align: center;
       padding: 40px 20px 30px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    .authors, .affiliations {
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
+    header h1 { margin: 0; font-size: 28px; line-height: 1.3; }
+    .authors, .affiliations { font-size: 14px; margin-top: 10px; }
+    .buttons { margin-top: 20px; }
     .buttons a {
-      background-color: #2980b9;
-      color: white;
+      background: #2980b9;
+      color: #fff;
       padding: 10px 18px;
       margin: 5px;
       text-decoration: none;
       border-radius: 6px;
       display: inline-block;
-      font-weight: bold;
+      font-weight: 600;
     }
+
     .section {
-      max-width: 900px;
+      max-width: var(--max-content);
       margin: 40px auto;
-      background: white;
-      border-radius: 12px;
+      background: var(--card);
+      border-radius: var(--radius);
       padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow);
     }
-    h2 {
-      color: #084B8A;
-      margin-top: 0;
+    h2 { color: var(--brand); margin: 0 0 16px; }
+
+    /* Hero: center image and limit width */
+    .hero {
+      max-width: var(--max-content);
+      margin: 30px auto 0;
+      padding: 0 16px;
     }
-    .videos {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .videos iframe {
-      flex: 1;
-      min-width: 300px;
-      height: 300px;
+    .hero .hero-body { text-align: center; }
+    .hero img {
+      display: block;
+      margin: 0 auto 12px;
+      width: 100%;
+      max-width: var(--video-max);
       border-radius: 10px;
-      border: none;
+      box-shadow: var(--shadow);
     }
+    .hero .subtitle {
+      font-size: 14px;
+      color: #333;
+      max-width: var(--video-max);
+      margin: 0 auto;
+    }
+
+    /* Videos: centered, responsive, with optional two-column on wide screens */
+    .videos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      justify-items: center;         /* center the items */
+    }
+    .video-item {
+      width: 100%;
+      max-width: var(--video-max);   /* center cap */
+    }
+    .video-item iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;          /* responsive height */
+      border: none;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      display: block;
+    }
+    .video-item p { margin: 14px 0 0; }
+    .video-item ul { margin: 10px 0 0 18px; }
+
+    /* On large screens, show videos side by side */
+    @media (min-width: 1100px) {
+      .videos {
+        grid-template-columns: 1fr 1fr;
+      }
+      .video-item {
+        max-width: 540px;            /* a bit narrower in two-column layout */
+      }
+    }
+
+    /* Gallery */
     .images {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
     }
     .images img {
       width: 100%;
+      display: block;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow);
+      background: #eee;
     }
   </style>
 </head>
@@ -81,12 +127,11 @@
 
 <header>
   <h1>Bio-Inspired Robotic Houbara: From Development to Field Deployment for Behavioral Studies</h1>
-  <div class="authors">
-    Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain
-  </div>
+  <div class="authors">Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain</div>
   <div class="affiliations">
-    Khalifa University Center for Autonomous Robotic Systems (KUCARS), United Arab Emirates<br>
-    RENECO International Wildlife Consultants LLC, Abu Dhabi, United Arab Emirates
+    Khalifa University Center for Autonomous Robotic Systems (KUCARS), United Arab Emirates<br />
+    RENECO International Wildlife Consultants LLC, Abu Dhabi, United Arab Emirates<br />
+    Corresponding Author: irfan.husain@ku.ac.ae
   </div>
   <div class="buttons">
     <a href="RAM_Paper.pdf" target="_blank">📄 Paper</a>
@@ -94,45 +139,61 @@
     <a href="https://lyessaadsaoud.github.io" target="_blank">🌐 Other</a>
   </div>
 </header>
+
 <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <img src="static/images/HuBot.png" alt="Full system architecture of HuBot" style="width: 70%; border-radius: 10px;">
-      <h2 class="subtitle">
-        Full system architecture of HuBot showing compute, vision sensing, PID-based neck actuation, rocker-bogie mobility, power distribution, and mobile interface integration.
-      </h2>
-    </div>
-  </div>
+  <div class="hero-body">
+    <img src="static/images/HuBot.png" alt="Full system architecture of HuBot" />
+    <h2 class="subtitle">
+      Full system architecture of HuBot showing compute, vision sensing, PID-based neck actuation,
+      rocker-bogie mobility, power distribution, and mobile interface integration.
+    </h2>
+  </div>
 </section>
 
 <div class="section">
   <h2>Abstract</h2>
   <p>
-    We present a bio-inspired robotic platform designed to replicate the appearance and basic movement patterns of the Houbara bustard for use in behavioral research. The design process began with high-resolution 3D scanning of a preserved specimen, followed by CAD modeling and lightweight shell fabrication using 3D printing. To achieve a realistic visual appearance, we used high-fidelity plastic wraps created from digital texture maps.
-For mobility, we developed a six-wheeled rocker-bogie-style drive system that allows the robot to move smoothly over uneven ground, enabling close interaction with birds in natural or semi-natural environments. The platform carries RGB and thermal cameras, with onboard processing using an NVIDIA Jetson for real-time detection, tracking, and autonomous motion control.
-In controlled trials, the robotic Houbara successfully triggered natural responses from live birds, including mating and approach behaviors. Thermal imaging confirmed that its heat signature closely matched that of a real bird, helping to maintain realism. Beyond research, the robot serves as an engaging tool for science outreach and exhibitions, combining biomimetic design with practical field robotics.
+    We present a bio-inspired robotic platform designed to replicate the appearance and basic movement
+    patterns of the Houbara bustard for use in behavioral research. The design process began with
+    high-resolution 3D scanning of a preserved specimen, followed by CAD modeling and lightweight shell
+    fabrication using 3D printing. To achieve a realistic visual appearance, we used high-fidelity plastic
+    wraps created from digital texture maps.
+  </p>
+  <p>
+    For mobility, we developed a six-wheeled rocker-bogie-style drive system that allows the robot to move
+    smoothly over uneven ground, enabling close interaction with birds in natural or semi-natural
+    environments. The platform carries RGB and thermal cameras, with onboard processing using an NVIDIA
+    Jetson for real-time detection, tracking, and autonomous motion control.
+  </p>
+  <p>
+    In controlled trials, the robotic Houbara successfully triggered natural responses from live birds,
+    including mating and approach behaviors. Thermal imaging confirmed that its heat signature closely matched
+    that of a real bird, helping to maintain realism. Beyond research, the robot serves as an engaging tool
+    for science outreach and exhibitions, combining biomimetic design with practical field robotics.
   </p>
 </div>
 
 <div class="section">
   <h2>Demo Videos</h2>
-  <div class="videos" style="display: flex; flex-direction: column; gap: 40px;">
 
+  <div class="videos">
     <!-- Autonomous Neck Tracking -->
     <div class="video-item">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/-xv-2QUVKHw" 
-              title="HuBot Autonomous Neck Tracking" frameborder="0" allowfullscreen></iframe>
+      <iframe
+        src="https://www.youtube.com/embed/-xv-2QUVKHw"
+        title="HuBot Autonomous Neck Tracking"
+        allowfullscreen></iframe>
       <p>
-        Discover HuBot’s autonomous neck tracking system, designed to mimic natural bird-like head 
-        movements for real-time object following and environmental awareness. This feature allows 
-        HuBot to intelligently track and respond to dynamic targets in its surroundings, making it 
-        a powerful tool for ecological research, robotics experiments, and interactive demonstrations.
+        Discover HuBot’s autonomous neck tracking system, designed to mimic natural bird-like head
+        movements for real-time object following and environmental awareness. This feature allows HuBot
+        to intelligently track and respond to dynamic targets in its surroundings, making it a powerful
+        tool for ecological research, robotics experiments, and interactive demonstrations.
       </p>
       <p>
-        Through sensor fusion and AI-driven control, HuBot’s neck tracking system smoothly adjusts 
-        orientation to maintain focus on moving subjects, replicating the natural responsiveness 
-        observed in wildlife. This capability enhances its effectiveness for field monitoring, 
-        behavioral studies, and autonomous robotics applications.
+        Through sensor fusion and AI-driven control, HuBot’s neck tracking system smoothly adjusts
+        orientation to maintain focus on moving subjects, replicating the natural responsiveness observed
+        in wildlife. This capability enhances its effectiveness for field monitoring, behavioral studies,
+        and autonomous robotics applications.
       </p>
       <ul>
         <li>Autonomous object tracking via servo-controlled neck</li>
@@ -143,18 +204,20 @@ In controlled trials, the robotic Houbara successfully triggered natural respons
 
     <!-- RGB + Thermal Recording -->
     <div class="video-item">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/A8_IGDKdwcg" 
-              title="HuBot RGB + Thermal Video Recording" frameborder="0" allowfullscreen></iframe>
+      <iframe
+        src="https://www.youtube.com/embed/A8_IGDKdwcg"
+        title="HuBot RGB + Thermal Video Recording"
+        allowfullscreen></iframe>
       <p>
-        Experience how HuBot, our bio-inspired robotic platform, captures the world through RGB and 
-        thermal video recording. This dual-mode setup allows us to simultaneously document the environment 
-        in natural color and thermal imaging, enabling new possibilities for ecological monitoring, 
-        robotics research, and real-world field deployment.
+        Experience how HuBot, our bio-inspired robotic platform, captures the world through RGB and thermal
+        video recording. This dual-mode setup allows us to simultaneously document the environment in natural
+        color and thermal imaging, enabling new possibilities for ecological monitoring, robotics research,
+        and real-world field deployment.
       </p>
       <p>
-        In this demonstration, HuBot integrates multi-sensor vision to record synchronized RGB + thermal 
-        footage, showcasing its ability to operate in challenging outdoor conditions. The system is designed 
-        for research in wildlife interaction, environmental sensing, and autonomous robotics, providing 
+        In this demonstration, HuBot integrates multi-sensor vision to record synchronized RGB + thermal
+        footage, showcasing its ability to operate in challenging outdoor conditions. The system is designed
+        for research in wildlife interaction, environmental sensing, and autonomous robotics, providing
         researchers with a powerful tool for collecting multimodal data.
       </p>
       <ul>
@@ -163,18 +226,16 @@ In controlled trials, the robotic Houbara successfully triggered natural respons
         <li>Application in ecological and robotics fieldwork</li>
       </ul>
     </div>
-
   </div>
 </div>
-
 
 <div class="section">
   <h2>Gallery</h2>
   <div class="images">
-    <img src="a728439d-e6b9-4484-a910-d0e8ad7d8066.png" alt="Robot Image 1">
-    <img src="1fe323cf-9e3b-48df-8502-7280bfad04b9.png" alt="Robot Image 2">
-    <img src="f499836f-33b9-4747-9588-d6ac66d3573e.png" alt="Robot Image 3">
-    <img src="e3f70b13-99a4-472f-a16f-7ec060aa449d.png" alt="Robot Image 4">
+    <img src="a728439d-e6b9-4484-a910-d0e8ad7d8066.png" alt="Robot Image 1" />
+    <img src="1fe323cf-9e3b-48df-8502-7280bfad04b9.png" alt="Robot Image 2" />
+    <img src="f499836f-33b9-4747-9588-d6ac66d3573e.png" alt="Robot Image 3" />
+    <img src="e3f70b13-99a4-472f-a16f-7ec060aa449d.png" alt="Robot Image 4" />
   </div>
 </div>
 
