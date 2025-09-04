@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</title>
+  <title>Bio-Inspired Robotic Houbara: From Development to Field Deployment for Behavioral Studies</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -80,7 +80,7 @@
 <body>
 
 <header>
-  <h1>Kinetic Avian Robots as Bio-Inspired Art and Science Communication Tools</h1>
+  <h1>Bio-Inspired Robotic Houbara: From Development to Field Deployment for Behavioral Studies</h1>
   <div class="authors">
     Lyes Saad Saoud, Enrico Sorato, Loïc Lesobre, Irfan Hussain
   </div>
@@ -94,26 +94,79 @@
     <a href="https://lyessaadsaoud.github.io" target="_blank">🌐 Other</a>
   </div>
 </header>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <img src="static/images/HuBot.png" alt="Full system architecture of HuBot" style="width: 70%; border-radius: 10px;">
+      <h2 class="subtitle">
+        Full system architecture of HuBot showing compute, vision sensing, PID-based neck actuation, rocker-bogie mobility, power distribution, and mobile interface integration.
+      </h2>
+    </div>
+  </div>
+</section>
 
 <div class="section">
   <h2>Abstract</h2>
   <p>
-    This paper presents a novel bio-inspired kinetic robotic platform that bridges ecological research, kinetic art, and science communication.
-    A modular design workflow is introduced for creating lifelike robotic surrogates, exemplified by a female Houbara bustard.
-    The platform integrates 3D anatomical scanning, parametric CAD modeling, articulated 3D-printed shells, and surface realism through photogrammetric vinyl wraps.
-    Multiple mobility configurations are supported, including rocker-bogie and Mecanum bases.
-    The system embeds RGB and thermal sensing, Jetson-based inference, and a GUI for real-time tracking and synchronized servo control.
-    It has been validated in both ecological trials and public-facing exhibitions, demonstrating its value across biology, engineering, and art.
+    We present a bio-inspired robotic platform designed to replicate the appearance and basic movement patterns of the Houbara bustard for use in behavioral research. The design process began with high-resolution 3D scanning of a preserved specimen, followed by CAD modeling and lightweight shell fabrication using 3D printing. To achieve a realistic visual appearance, we used high-fidelity plastic wraps created from digital texture maps.
+For mobility, we developed a six-wheeled rocker-bogie-style drive system that allows the robot to move smoothly over uneven ground, enabling close interaction with birds in natural or semi-natural environments. The platform carries RGB and thermal cameras, with onboard processing using an NVIDIA Jetson for real-time detection, tracking, and autonomous motion control.
+In controlled trials, the robotic Houbara successfully triggered natural responses from live birds, including mating and approach behaviors. Thermal imaging confirmed that its heat signature closely matched that of a real bird, helping to maintain realism. Beyond research, the robot serves as an engaging tool for science outreach and exhibitions, combining biomimetic design with practical field robotics.
   </p>
 </div>
 
 <div class="section">
   <h2>Demo Videos</h2>
-  <div class="videos">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+  <div class="videos" style="display: flex; flex-direction: column; gap: 40px;">
+
+    <!-- Autonomous Neck Tracking -->
+    <div class="video-item">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/-xv-2QUVKHw" 
+              title="HuBot Autonomous Neck Tracking" frameborder="0" allowfullscreen></iframe>
+      <p>
+        Discover HuBot’s autonomous neck tracking system, designed to mimic natural bird-like head 
+        movements for real-time object following and environmental awareness. This feature allows 
+        HuBot to intelligently track and respond to dynamic targets in its surroundings, making it 
+        a powerful tool for ecological research, robotics experiments, and interactive demonstrations.
+      </p>
+      <p>
+        Through sensor fusion and AI-driven control, HuBot’s neck tracking system smoothly adjusts 
+        orientation to maintain focus on moving subjects, replicating the natural responsiveness 
+        observed in wildlife. This capability enhances its effectiveness for field monitoring, 
+        behavioral studies, and autonomous robotics applications.
+      </p>
+      <ul>
+        <li>Autonomous object tracking via servo-controlled neck</li>
+        <li>Smooth, biologically inspired head articulation</li>
+        <li>Applications in ecological monitoring and robotics research</li>
+      </ul>
+    </div>
+
+    <!-- RGB + Thermal Recording -->
+    <div class="video-item">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/A8_IGDKdwcg" 
+              title="HuBot RGB + Thermal Video Recording" frameborder="0" allowfullscreen></iframe>
+      <p>
+        Experience how HuBot, our bio-inspired robotic platform, captures the world through RGB and 
+        thermal video recording. This dual-mode setup allows us to simultaneously document the environment 
+        in natural color and thermal imaging, enabling new possibilities for ecological monitoring, 
+        robotics research, and real-world field deployment.
+      </p>
+      <p>
+        In this demonstration, HuBot integrates multi-sensor vision to record synchronized RGB + thermal 
+        footage, showcasing its ability to operate in challenging outdoor conditions. The system is designed 
+        for research in wildlife interaction, environmental sensing, and autonomous robotics, providing 
+        researchers with a powerful tool for collecting multimodal data.
+      </p>
+      <ul>
+        <li>Real-time RGB + thermal video capture</li>
+        <li>Onboard sensor integration for HuBot</li>
+        <li>Application in ecological and robotics fieldwork</li>
+      </ul>
+    </div>
+
   </div>
 </div>
+
 
 <div class="section">
   <h2>Gallery</h2>
