@@ -186,6 +186,53 @@
   object-fit: cover;                /* fill nicely */
 }
 .gallery6-media img.contain { object-fit: contain; background: #fff; }
+/* ---- custom mixed gallery layout ---- */
+.gallery-mixed {
+  max-width: var(--max-content);
+  margin: 40px auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.gallery-mixed h2 { margin: 0 0 14px; color: var(--brand); }
+
+.gallery-row {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.gallery-row.three {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.gallery-row.single {
+  grid-template-columns: 1fr;
+}
+
+.gallery-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery-item .media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #eef1f5;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* default for photos */
+}
+.gallery-item img.contain {
+  object-fit: contain;
+  background: #fff;
+}
 
   </style>
 </head>
@@ -308,46 +355,49 @@
   </div>
 </div>
 
-<div class="gallery6">
+<div class="gallery-mixed">
   <h2>Gallery</h2>
-  <div class="gallery6-grid">
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img src="static/images/RealTest.png" alt="HuBot interacting with live Houbara in field" loading="lazy">
-      </div>
-    </figure>
 
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img src="static/images/Hubot_sticker.jpg" alt="Close-up during outdoor evaluation" loading="lazy">
-      </div>
-    </figure>
+  <!-- Row 1: three images -->
+  <div class="gallery-row three">
+    <figure class="gallery-item"><div class="media">
+      <img src="static/images/RealTest.png" alt="HuBot interacting with live Houbara" loading="lazy">
+    </div></figure>
 
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img class="contain" src="static/images/results0.png" alt="RGB vs Thermal paired views" loading="lazy">
-      </div>
-    </figure>
+    <figure class="gallery-item"><div class="media">
+      <img src="static/images/Hubot_sticker.jpg" alt="Close-up during outdoor evaluation" loading="lazy">
+    </div></figure>
 
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img class="contain" src="static/images/results1.png" alt="External views and GUI tracking visualization" loading="lazy">
-      </div>
-    </figure>
+    <figure class="gallery-item"><div class="media">
+      <img class="contain" src="static/images/results0.png" alt="RGB vs Thermal paired views" loading="lazy">
+    </div></figure>
+  </div>
 
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img class="contain" src="static/images/CadModel1.png" alt="CAD callouts: actuators, camera, electronics" loading="lazy">
-      </div>
-    </figure>
+  <!-- Row 2: single wide image (Image 6) -->
+  <div class="gallery-row single">
+    <figure class="gallery-item"><div class="media">
+      <img class="contain" src="static/images/design_pipeline.png"
+           alt="Design pipeline: scanning → modeling → 3D printing → skin" loading="lazy">
+    </div></figure>
+  </div>
 
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img class="contain" src="static/images/design_pipeline.png" alt="Design pipeline: scanning → modeling → 3D printing → skin" loading="lazy">
-      </div>
-    </figure>
+  <!-- Row 3: single wide image (Image 4) -->
+  <div class="gallery-row single">
+    <figure class="gallery-item"><div class="media">
+      <img class="contain" src="static/images/results1.png"
+           alt="External views and GUI tracking visualization" loading="lazy">
+    </div></figure>
+  </div>
+
+  <!-- Row 4: single wide image (Image 5) -->
+  <div class="gallery-row single">
+    <figure class="gallery-item"><div class="media">
+      <img class="contain" src="static/images/CadModel1.png"
+           alt="CAD callouts: actuators, camera, electronics" loading="lazy">
+    </div></figure>
   </div>
 </div>
+
 
 
 <!-- Citation Note -->
