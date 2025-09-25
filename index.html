@@ -166,6 +166,64 @@
       box-shadow: var(--shadow);
       background: #eee;
     }
+
+    /* ------- Gallery (organized) ------- */
+.gallery {
+  max-width: var(--max-content);
+  margin: 40px auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.gallery h2 { margin: 0 0 10px; color: var(--brand); }
+.gallery h3 { margin: 22px 0 12px; font-size: 18px; color: #2c3e50; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 680px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.gallery-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.gallery-card .media {
+  width: 100%;
+  aspect-ratio: 16 / 9;      /* uniform tiles */
+  position: relative;
+  overflow: hidden;
+}
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* crop to fit nicely */
+  display: block;
+  transform: scale(1);
+  transition: transform .35s ease;
+}
+.gallery-card:hover img { transform: scale(1.03); }
+
+.gallery-card figcaption {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #444;
+  background: #fafbfc;
+  border-top: 1px solid #f0f2f5;
+}
+
   </style>
 </head>
 <body>
@@ -287,34 +345,103 @@
   </div>
 </div>
 
-<div class="section">
+<div class="gallery">
   <h2>Gallery</h2>
-  <div class="images">
-    <!-- New images -->
-    <img src="static/images/RealTest.png" alt="HuBot interacting with real Houbara in field" />
-    <img src="static/images/results0.png" alt="RGB and Thermal Views of HuBot" />
-    <img src="static/images/results1.png" alt="External and GUI Visualization Frames" />
-    <img src="static/images/Hubot_sticker.jpg" alt="HuBot field test close-up" />
-    <img src="static/images/CadModel1.png" alt="HuBot CAD and electronics design details" />
-    <img src="static/images/design_pipeline.png" alt="Full design and manufacturing pipeline" />
 
-    <!-- Existing images -->
-    <img src="static/images/a728439d-e6b9-4484-a910-d0e8ad7d8066.png" alt="Robot Image 1" />
-    <img src="static/images/1fe323cf-9e3b-48df-8502-7280bfad04b9.png" alt="Robot Image 2" />
-    <img src="static/images/f499836f-33b9-4747-9588-d6ac66d3573e.png" alt="Robot Image 3" />
-    <img src="static/images/e3f70b13-99a4-472f-a16f-7ec060aa449d.png" alt="Robot Image 4" />
+  <!-- Field Interactions -->
+  <h3>Field Interactions</h3>
+  <div class="gallery-grid">
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/RealTest.png"
+             alt="HuBot meeting live Houbara bustards in the field">
+      </div>
+      <figcaption>Live interaction scenes with Houbara bustards (field tests).</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/Hubot_sticker.jpg"
+             alt="Close-up of HuBot next to a bird during a test">
+      </div>
+      <figcaption>Close-up during outdoor evaluation.</figcaption>
+    </figure>
+  </div>
+
+  <!-- Multimodal Sensing -->
+  <h3>Multimodal Sensing</h3>
+  <div class="gallery-grid">
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/results0.png"
+             alt="RGB and thermal paired views">
+      </div>
+      <figcaption>RGB vs. Thermal views captured simultaneously.</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/results1.png"
+             alt="External view and GUI tracking visualization">
+      </div>
+      <figcaption>External views and the GUI tracking visualization.</figcaption>
+    </figure>
+  </div>
+
+  <!-- Design & Pipeline -->
+  <h3>Design & Pipeline</h3>
+  <div class="gallery-grid">
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/CadModel1.png"
+             alt="CAD model callouts (actuation, camera, electronics)">
+      </div>
+      <figcaption>CAD model and component callouts (actuators, camera, electronics).</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/design_pipeline.png"
+             alt="Design and manufacturing pipeline steps">
+      </div>
+      <figcaption>Pipeline: scanning → modeling → 3D printing → post-processing → skin application.</figcaption>
+    </figure>
+
+    <!-- Keep any legacy images here if you still want them visible -->
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/a728439d-e6b9-4484-a910-d0e8ad7d8066.png"
+             alt="Legacy Robot Image 1">
+      </div>
+      <figcaption>Additional build snapshot.</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/1fe323cf-9e3b-48df-8502-7280bfad04b9.png"
+             alt="Legacy Robot Image 2">
+      </div>
+      <figcaption>Assembly details.</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/f499836f-33b9-4747-9588-d6ac66d3573e.png"
+             alt="Legacy Robot Image 3">
+      </div>
+      <figcaption>Testing snapshot.</figcaption>
+    </figure>
+
+    <figure class="gallery-card">
+      <div class="media">
+        <img loading="lazy" src="static/images/e3f70b13-99a4-472f-a16f-7ec060aa449d.png"
+             alt="Legacy Robot Image 4">
+      </div>
+      <figcaption>Prototype iteration.</figcaption>
+    </figure>
   </div>
 </div>
 
-<!-- Citation Note -->
-<div class="section" style="text-align:center; font-size:14px; color:#555; margin-top:30px;">
-  <p>
-    <strong>Citation:</strong> <br/>
-    Lyes Saad Saoud<sup>∗</sup>, Enrico Sorato<sup>†</sup>, Loïc Lesobre<sup>†</sup>, Irfan Hussain<sup>∗</sup> <br/>
-    <em>Bio-Inspired Robotic Houbara: From Development to Field Deployment for Behavioral Studies</em> <br/>
-    <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">arXiv</a>
-  </p>
-</div>
 
 
 </body>
