@@ -106,6 +106,51 @@
         max-width: 540px;            /* a bit narrower in two-column layout */
       }
     }
+/* ------ Demo Videos (organized cards) ------ */
+.videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: var(--max-content);
+  margin-inline: auto;
+}
+
+.video-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.video-card .media {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.video-card h3 {
+  margin: 14px 0 6px;
+  font-size: 18px;
+  color: var(--brand);
+}
+
+.video-card p { margin: 10px 0 0; line-height: 1.55; }
+.video-card ul { margin: 10px 0 0 18px; }
+
+@media (min-width: 1100px) {
+  .videos {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .video-card.featured { grid-column: 1 / -1; }  /* full width */
+  .video-card:not(.featured) { grid-column: span 6; } /* two columns */
+}
 
     /* Gallery */
     .images {
@@ -177,72 +222,68 @@
   <h2>Demo Videos</h2>
 
   <div class="videos">
-    <div class="video-item">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/S2cJej1MZn4?rel=0&modestbranding=1&playsinline=1"
-    title="HuBot: From 3D Scanning to Field Trials"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen></iframe>
-  <p>
-    End-to-end summary of HuBot’s pipeline—from specimen scanning and digital modeling to
-    fabrication, assembly, and outdoor field trials.
-  </p>
-  <ul>
-    <li>Chronological workflow overview</li>
-    <li>Persistent titles and crossfades for clarity</li>
-    <li>Optimized 16:9 for YouTube playback</li>
-  </ul>
-</div>
+    <!-- Featured: End-to-end pipeline -->
+    <article class="video-card featured">
+      <div class="media">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/S2cJej1MZn4?rel=0&modestbranding=1&playsinline=1"
+          title="HuBot: From 3D Scanning to Field Trials"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <h3>HuBot: From 3D Scanning to Field Trials</h3>
+      <p>
+        End-to-end summary of HuBot’s pipeline—from specimen scanning and digital modeling to fabrication,
+        assembly, and outdoor field trials.
+      </p>
+      <ul>
+        <li>Chronological workflow overview</li>
+        <li>Persistent titles and crossfades for clarity</li>
+        <li>Optimized 16:9 for YouTube playback</li>
+      </ul>
+    </article>
 
     <!-- Autonomous Neck Tracking -->
-    <div class="video-item">
-      <iframe
-        src="https://www.youtube.com/embed/-xv-2QUVKHw"
-        title="HuBot Autonomous Neck Tracking"
-        allowfullscreen></iframe>
+    <article class="video-card">
+      <div class="media">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/-xv-2QUVKHw?rel=0&modestbranding=1&playsinline=1"
+          title="HuBot Autonomous Neck Tracking"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <h3>Autonomous Neck Tracking</h3>
       <p>
-        Discover HuBot’s autonomous neck tracking system, designed to mimic natural bird-like head
-        movements for real-time object following and environmental awareness. This feature allows HuBot
-        to intelligently track and respond to dynamic targets in its surroundings, making it a powerful
-        tool for ecological research, robotics experiments, and interactive demonstrations.
-      </p>
-      <p>
-        Through sensor fusion and AI-driven control, HuBot’s neck tracking system smoothly adjusts
-        orientation to maintain focus on moving subjects, replicating the natural responsiveness observed
-        in wildlife. This capability enhances its effectiveness for field monitoring, behavioral studies,
-        and autonomous robotics applications.
+        HuBot’s neck tracking system mimics bird-like head movements for real-time target following
+        and environmental awareness, enabling responsive interaction in the field.
       </p>
       <ul>
-        <li>Autonomous object tracking via servo-controlled neck</li>
-        <li>Smooth, biologically inspired head articulation</li>
-        <li>Applications in ecological monitoring and robotics research</li>
+        <li>Servo-controlled, biologically inspired articulation</li>
+        <li>Sensor fusion + AI control</li>
+        <li>Applications in ecological monitoring & robotics</li>
       </ul>
-    </div>
+    </article>
 
     <!-- RGB + Thermal Recording -->
-    <div class="video-item">
-      <iframe
-        src="https://www.youtube.com/embed/A8_IGDKdwcg"
-        title="HuBot RGB + Thermal Video Recording"
-        allowfullscreen></iframe>
+    <article class="video-card">
+      <div class="media">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/A8_IGDKdwcg?rel=0&modestbranding=1&playsinline=1"
+          title="HuBot RGB + Thermal Video Recording"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <h3>RGB + Thermal Video Recording</h3>
       <p>
-        Experience how HuBot, our bio-inspired robotic platform, captures the world through RGB and thermal
-        video recording. This dual-mode setup allows us to simultaneously document the environment in natural
-        color and thermal imaging, enabling new possibilities for ecological monitoring, robotics research,
-        and real-world field deployment.
-      </p>
-      <p>
-        In this demonstration, HuBot integrates multi-sensor vision to record synchronized RGB + thermal
-        footage, showcasing its ability to operate in challenging outdoor conditions. The system is designed
-        for research in wildlife interaction, environmental sensing, and autonomous robotics, providing
-        researchers with a powerful tool for collecting multimodal data.
+        Dual-mode capture (RGB + thermal) for synchronized environmental documentation and
+        multimodal field data collection.
       </p>
       <ul>
-        <li>Real-time RGB + thermal video capture</li>
-        <li>Onboard sensor integration for HuBot</li>
-        <li>Application in ecological and robotics fieldwork</li>
+        <li>Real-time RGB + thermal recording</li>
+        <li>Onboard sensor integration</li>
+        <li>Designed for outdoor research deployments</li>
       </ul>
-    </div>
+    </article>
   </div>
 </div>
 
