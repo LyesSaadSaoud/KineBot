@@ -152,76 +152,55 @@
   .video-card:not(.featured) { grid-column: span 6; } /* two columns */
 }
 
-    /* Gallery */
-    .images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 12px;
-    }
-    .images img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      background: #eee;
-    }
-
-    /* ------- Gallery (organized) ------- */
-.gallery {
+    /* --- Simple 6-image gallery --- */
+.gallery6 {
   max-width: var(--max-content);
   margin: 40px auto;
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 26px;
+  padding: 24px;
 }
 
-.gallery h2 { margin: 0 0 10px; color: var(--brand); }
-.gallery h3 { margin: 22px 0 12px; font-size: 18px; color: #2c3e50; }
+.gallery6 h2 { margin: 0 0 14px; color: var(--brand); }
 
-.gallery-grid {
+.gallery6-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 16px;
+  grid-template-columns: 1fr;             /* mobile */
 }
-
 @media (min-width: 680px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery6-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1100px) {
-  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery6-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.gallery-card {
+.gallery6-card {
   background: #fff;
   border-radius: 10px;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.gallery-card .media {
+/* uniform tile height with responsive width */
+.gallery6-media {
   width: 100%;
-  aspect-ratio: 16 / 9;      /* uniform tiles */
+  aspect-ratio: 16 / 9;
+  background: #eef1f5;
   position: relative;
-  overflow: hidden;
 }
-.gallery-card img {
+.gallery6-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* crop to fit nicely */
   display: block;
-  transform: scale(1);
-  transition: transform .35s ease;
+  object-fit: cover;            /* default for photos */
 }
-.gallery-card:hover img { transform: scale(1.03); }
 
-.gallery-card figcaption {
-  padding: 10px 12px;
-  font-size: 14px;
-  color: #444;
-  background: #fafbfc;
-  border-top: 1px solid #f0f2f5;
+/* for diagrams/charts you don't want cropped */
+.gallery6-media img.contain {
+  object-fit: contain;
+  background: #fff;
 }
 
   </style>
@@ -345,102 +324,55 @@
   </div>
 </div>
 
-<div class="gallery">
+<div class="gallery6">
   <h2>Gallery</h2>
-
-  <!-- Field Interactions -->
-  <h3>Field Interactions</h3>
-  <div class="gallery-grid">
-    <figure class="gallery-card">
-      <div class="media">
+  <div class="gallery6-grid">
+    <!-- Photos: use object-fit: cover -->
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
         <img loading="lazy" src="static/images/RealTest.png"
-             alt="HuBot meeting live Houbara bustards in the field">
+             alt="HuBot interacting with live Houbara in field">
       </div>
-      <figcaption>Live interaction scenes with Houbara bustards (field tests).</figcaption>
     </figure>
 
-    <figure class="gallery-card">
-      <div class="media">
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
         <img loading="lazy" src="static/images/Hubot_sticker.jpg"
-             alt="Close-up of HuBot next to a bird during a test">
+             alt="HuBot close-up during outdoor evaluation">
       </div>
-      <figcaption>Close-up during outdoor evaluation.</figcaption>
-    </figure>
-  </div>
-
-  <!-- Multimodal Sensing -->
-  <h3>Multimodal Sensing</h3>
-  <div class="gallery-grid">
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/results0.png"
-             alt="RGB and thermal paired views">
-      </div>
-      <figcaption>RGB vs. Thermal views captured simultaneously.</figcaption>
     </figure>
 
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/results1.png"
-             alt="External view and GUI tracking visualization">
+    <!-- Diagrams/figures: use .contain to avoid cropping -->
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
+        <img loading="lazy" class="contain" src="static/images/results0.png"
+             alt="RGB vs Thermal paired views">
       </div>
-      <figcaption>External views and the GUI tracking visualization.</figcaption>
-    </figure>
-  </div>
-
-  <!-- Design & Pipeline -->
-  <h3>Design & Pipeline</h3>
-  <div class="gallery-grid">
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/CadModel1.png"
-             alt="CAD model callouts (actuation, camera, electronics)">
-      </div>
-      <figcaption>CAD model and component callouts (actuators, camera, electronics).</figcaption>
     </figure>
 
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/design_pipeline.png"
-             alt="Design and manufacturing pipeline steps">
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
+        <img loading="lazy" class="contain" src="static/images/results1.png"
+             alt="External views and GUI tracking visualization">
       </div>
-      <figcaption>Pipeline: scanning → modeling → 3D printing → post-processing → skin application.</figcaption>
     </figure>
 
-    <!-- Keep any legacy images here if you still want them visible -->
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/a728439d-e6b9-4484-a910-d0e8ad7d8066.png"
-             alt="Legacy Robot Image 1">
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
+        <img loading="lazy" class="contain" src="static/images/CadModel1.png"
+             alt="CAD callouts: actuators, camera, electronics">
       </div>
-      <figcaption>Additional build snapshot.</figcaption>
     </figure>
 
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/1fe323cf-9e3b-48df-8502-7280bfad04b9.png"
-             alt="Legacy Robot Image 2">
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
+        <img loading="lazy" class="contain" src="static/images/design_pipeline.png"
+             alt="Design pipeline: scanning → modeling → 3D printing → skin">
       </div>
-      <figcaption>Assembly details.</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/f499836f-33b9-4747-9588-d6ac66d3573e.png"
-             alt="Legacy Robot Image 3">
-      </div>
-      <figcaption>Testing snapshot.</figcaption>
-    </figure>
-
-    <figure class="gallery-card">
-      <div class="media">
-        <img loading="lazy" src="static/images/e3f70b13-99a4-472f-a16f-7ec060aa449d.png"
-             alt="Legacy Robot Image 4">
-      </div>
-      <figcaption>Prototype iteration.</figcaption>
     </figure>
   </div>
 </div>
+
 
 
 
