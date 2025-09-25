@@ -166,42 +166,26 @@
 
 .gallery6-grid {
   display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr;             /* mobile */
+  gap: 20px;
+  grid-template-columns: 1fr;       /* 1 per row on mobile */
 }
+
 @media (min-width: 680px) {
-  .gallery6-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1100px) {
-  .gallery6-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery6-grid { grid-template-columns: repeat(2, 1fr); } /* 2 per row on tablet & desktop */
 }
 
-.gallery6-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-/* uniform tile height with responsive width */
 .gallery6-media {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #eef1f5;
-  position: relative;
 }
 .gallery6-media img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;            /* default for photos */
+  object-fit: cover;                /* fill nicely */
 }
-
-/* for diagrams/charts you don't want cropped */
-.gallery6-media img.contain {
-  object-fit: contain;
-  background: #fff;
-}
+.gallery6-media img.contain { object-fit: contain; background: #fff; }
 
   </style>
 </head>
@@ -327,51 +311,44 @@
 <div class="gallery6">
   <h2>Gallery</h2>
   <div class="gallery6-grid">
-    <!-- Photos: use object-fit: cover -->
     <figure class="gallery6-card">
       <div class="gallery6-media">
-        <img loading="lazy" src="static/images/RealTest.png"
-             alt="HuBot interacting with live Houbara in field">
+        <img src="static/images/RealTest.png" alt="HuBot interacting with live Houbara in field" loading="lazy">
       </div>
     </figure>
 
     <figure class="gallery6-card">
       <div class="gallery6-media">
-        <img loading="lazy" src="static/images/Hubot_sticker.jpg"
-             alt="HuBot close-up during outdoor evaluation">
-      </div>
-    </figure>
-
-    <!-- Diagrams/figures: use .contain to avoid cropping -->
-    <figure class="gallery6-card">
-      <div class="gallery6-media">
-        <img loading="lazy" class="contain" src="static/images/results0.png"
-             alt="RGB vs Thermal paired views">
+        <img src="static/images/Hubot_sticker.jpg" alt="Close-up during outdoor evaluation" loading="lazy">
       </div>
     </figure>
 
     <figure class="gallery6-card">
       <div class="gallery6-media">
-        <img loading="lazy" class="contain" src="static/images/results1.png"
-             alt="External views and GUI tracking visualization">
+        <img class="contain" src="static/images/results0.png" alt="RGB vs Thermal paired views" loading="lazy">
       </div>
     </figure>
 
     <figure class="gallery6-card">
       <div class="gallery6-media">
-        <img loading="lazy" class="contain" src="static/images/CadModel1.png"
-             alt="CAD callouts: actuators, camera, electronics">
+        <img class="contain" src="static/images/results1.png" alt="External views and GUI tracking visualization" loading="lazy">
       </div>
     </figure>
 
     <figure class="gallery6-card">
       <div class="gallery6-media">
-        <img loading="lazy" class="contain" src="static/images/design_pipeline.png"
-             alt="Design pipeline: scanning → modeling → 3D printing → skin">
+        <img class="contain" src="static/images/CadModel1.png" alt="CAD callouts: actuators, camera, electronics" loading="lazy">
+      </div>
+    </figure>
+
+    <figure class="gallery6-card">
+      <div class="gallery6-media">
+        <img class="contain" src="static/images/design_pipeline.png" alt="Design pipeline: scanning → modeling → 3D printing → skin" loading="lazy">
       </div>
     </figure>
   </div>
 </div>
+
 
 <!-- Citation Note -->
 <div class="section" style="text-align:center; font-size:14px; color:#555; margin-top:30px;">
